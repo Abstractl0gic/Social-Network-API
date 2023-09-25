@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^7.0.2",
+    "mongoose": "^7.5.2",
+    "nodemon": "2.0.22",
+    "semver": "7.5.2",
+    "simple-update-notifier": "^2.0.0",
     "validator": "^13.11.0"
   },
   "devDependencies": {
