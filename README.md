@@ -21,6 +21,11 @@ The Social Network API offers the following key features:
 - Validation: Input validation to ensure data integrity.
 - Virtuals: Use virtuals to compute additional data (e.g., friend count, reaction count).
 
+## Demo Video
+
+[Watch the demo video](https://drive.google.com/file/d/1SGhaapAA1tEZeej_87DxjFkAmO7rJWNz/view?usp=sharing)
+
+
 ## Installation
 
 To set up and run the Social Network API on your local machine, follow these steps:
