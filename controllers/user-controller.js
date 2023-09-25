@@ -84,6 +84,41 @@ const userController = {
       res.status(400).json(err);
     }
   },
+  // add friend
+  addFriend: async ({ params: { userId, friendId } }, res) => {
+    try {
+      const user = await User.findOneAndUpdate(
+        { _id: userId },
+        { $addToSet: { friends: friendId } },
+        { new: true, runValidators: true }
+      );
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(400).json(err);
+    }
+  },
+
+  // remove friend
+  removeFriend: async ({ params: { userId, friendId } }, res) => {
+    try {
+      const user = await User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { friends: friendId } },
+        { new: true }
+      );
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(400).json(err);
+    }
+  },
 };
 
 module.exports = userController;
