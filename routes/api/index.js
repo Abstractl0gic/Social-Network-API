@@ -1,10 +1,8 @@
-const express = require('express');
-const apiRoutes = require('./routes/api');
-const app = express();
+const router = require('express').Router();
+const userRoutes = require('./users');
+const thoughtRoutes = require('./thoughts');
 
-app.use('/api', apiRoutes);
+router.use('/users', userRoutes);
+router.use('/thoughts', thoughtRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+module.exports = router;
